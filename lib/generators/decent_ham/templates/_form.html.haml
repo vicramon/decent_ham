@@ -1,0 +1,14 @@
+%section
+
+  %article
+
+    = form_for <%= singular_name %> do |f|
+      %fieldset
+        <% @attributes.each do |attribute| %>
+        %dl
+          %dt= f.label :<%= attribute.name %>
+          %dd= <%= attribute.form_field %>
+        <% end %>
+      %fieldset.actions
+        = f.submit
+

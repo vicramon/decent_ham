@@ -1,0 +1,9 @@
+%section
+
+  %article
+
+    %h1 Edit <%= singular_name.capitalize %>
+
+    = render 'form'
+
+    = link_to "Delete", <%= singular_name %>, method: :delete

@@ -1,0 +1,17 @@
+%section
+
+  %article
+
+    %h1 View <%= singular_name.capitalize %>
+
+    = link_to "All <%= plural_name.capitalize %>", <%= plural_name %>_path
+    |
+    = link_to "Edit", edit_<%= singular_name %>_path(<%= singular_name %>)
+
+    %table
+      <% @attributes.each do |attribute| %>
+      %tr
+        %td <%= attribute.name.gsub(/_/,' ').capitalize %>
+        %td= <%= singular_name %>.<%= attribute.name %>
+      <% end %>
+
