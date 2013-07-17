@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "decent_ham"
-  spec.version       = "0.0.4"
+  spec.version       = "0.0.5"
   spec.authors       = "Vic Ramon"
   spec.email         = "v@vicramon.com"
   spec.description   = "Decent Ham generates rails crud using decent_exposure and haml."
