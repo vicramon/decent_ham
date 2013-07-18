@@ -1,5 +1,6 @@
 module DecentHam
   module DecentHamFormCreator
+
     def form_field_map
       {
         string: "text_field", 

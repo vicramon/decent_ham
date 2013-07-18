@@ -14,10 +14,6 @@ module DecentHam
       template "model.rb", "app/models/#{singular_name}.rb"
     end
 
-    def constant_name
-      singular_name.capitalize.constantize
-    end
-
     def create_controller
       @attributes = model_attributes
       template "controller.rb", "app/controllers/#{name}_controller.rb"

@@ -13,5 +13,9 @@ module DecentHam
       strong_params = ":#{singular_name}_params"
     end
 
+    def constant_name
+      singular_name.capitalize.constantize
+    end
+
   end
 end
