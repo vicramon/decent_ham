@@ -67,6 +67,8 @@ end
 ### Views
 
 
+Index
+
 ```ruby
 # app/views/users/index.html.haml
 
@@ -103,6 +105,8 @@ end
 
 ```
 
+Show
+
 ```ruby
 # app/views/users/show.html.haml
 
@@ -136,6 +140,8 @@ end
 
 ```
 
+New
+
 ```ruby
 # app/views/users/new.html.haml
 
@@ -149,6 +155,8 @@ end
 
 
 ```
+
+Edit
 
 ```ruby
 # app/views/users/edit.html.haml
@@ -164,6 +172,8 @@ end
     = link_to "Delete", user, method: :delete
 
 ```
+
+Form partial
 
 ```ruby
 # app/views/users/_form.html.haml
