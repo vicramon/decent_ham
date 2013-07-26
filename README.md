@@ -66,5 +66,131 @@ end
 
 ### Views
 
-    pending
 
+```ruby
+# app/views/users/index.html.haml
+
+%section
+
+  %article
+
+    %h1 All Users
+
+    = link_to "New user", new_user_path
+
+    %table
+      %thead
+        %tr
+          %td Name
+          %td Email
+          %td Active
+          %td Description
+
+          %td
+      %tbody
+        - users.each do |user|
+          %tr
+            %td= user.name
+            %td= user.email
+            %td= user.active
+            %td= user.description
+
+            %td
+              = link_to "View", user
+              |
+              = link_to "Edit", edit_user_path(user)
+
+
+```
+
+```ruby
+# app/views/users/show.html.haml
+
+%section
+
+  %article
+
+    %h1 View User
+
+    = link_to "All Users", users_path
+    |
+    = link_to "Edit", edit_user_path(user)
+
+    %table
+
+      %tr
+        %td Name
+        %td= user.name
+
+      %tr
+        %td Email
+        %td= user.email
+
+      %tr
+        %td Active
+        %td= user.active
+
+      %tr
+        %td Description
+        %td= user.description
+
+```
+
+```ruby
+# app/views/users/new.html.haml
+
+%section
+
+  %article
+
+    %h1 Create User
+
+    = render 'form'
+
+
+```
+
+```ruby
+# app/views/users/edit.html.haml
+
+%section
+
+  %article
+
+    %h1 Edit User
+
+    = render 'form'
+
+    = link_to "Delete", user, method: :delete
+
+```
+
+```ruby
+# app/views/users/_form.html.haml
+
+%section
+
+  %article
+
+    = form_for user do |f|
+      %fieldset
+
+        %dl
+          %dt= f.label :name
+          %dd= f.text_field :name
+
+        %dl
+          %dt= f.label :email
+          %dd= f.text_field :email
+
+        %dl
+          %dt= f.label :active
+          %dd= f.check_box :active
+
+        %dl
+          %dt= f.label :description
+          %dd= f.text_area :description
+
+      %fieldset.actions
+        = f.submit
+```
